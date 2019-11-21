@@ -25,6 +25,7 @@
     ]
   },
   "dependencies": {
+    "pdfkit": "^0.10.0",
     "phantom-html-to-pdf": "^0.6.0"
   }
 }

@@ -2,8 +2,7 @@
 // It has the same sandbox as a Chrome extension.
 const fs = require('fs');
 const { dialog } = require('electron').remote;
-const path = require('path');
-const conversion = require("phantom-html-to-pdf")();
+const PDFDocument = require('pdfkit');
 
 let quiz = null;
 let user = null;
@@ -67,17 +66,37 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }*/
 
-  const printToPDF = (filePaths) => {
-    document.getElementById('pdf-btn').style.visibility = 'hidden';
-    const html = document.getElementById('pdf-ctn').outerHTML;
-    conversion({ html }, function(err, pdf) {
-      if (err) throw err;
-      let output = fs.createWriteStream(filePaths + '/output.pdf')
-        // since pdf.stream is a node.js stream you can use it
-        // to save the pdf to a file (like in this example) or to
-        // respond an http request.
-      pdf.stream.pipe(output);
+  const printToPDF = (filePaths, user) => {
+
+    // Create a document
+    const doc = new PDFDocument;
+
+    // Pipe its output somewhere, like to a file or HTTP response
+    // See below for browser usage
+    doc.pipe(fs.createWriteStream(filePaths + '/output.pdf'));
+
+      `Votre score : ${user.score * 100 / user.maxScore} %.`
+
+    // Add an image, constrain it to a given size, and center it vertically and horizontally
+    doc.image('assets/imgs/certificate.png', {
+      fit: [250, 300],
+      align: 'center',
+      valign: 'center'
     });
+
+
+    // Embed a font, set the font size, and render some text
+    doc.font('assets/fonts/Raleway/Raleway-Medium.ttf')
+      .fontSize(25)
+      .text(`${user.firstname} ${user.lastname}.`, 100, 350);
+
+    // Embed a font, set the font size, and render some text
+    doc.font('assets/fonts/Raleway/Raleway-Medium.ttf')
+      .fontSize(25)
+      .text(`Votre score : ${user.score * 100 / user.maxScore} %.`, 100, 400);
+
+    // Finalize PDF file
+    doc.end();
   }
 
   // Read quiz.json
@@ -171,37 +190,16 @@ window.addEventListener('DOMContentLoaded', () => {
       document.getElementById('section-ctn__apreciation').innerHTML = html;
       document.getElementById('section-ctn__nbquestions').innerHTML = `Vous avez répondu à ${user.nbQuestions} questions.`;
       document.getElementById('section-ctn__score').innerHTML = `Votre score : ${user.score * 100 / user.maxScore} %.`;
-    });
 
-    document.getElementById('pdf-btn').addEventListener('click', e => {
-
-      //TODO: delete user.json
-      // SAve PDF
-      dialog.showOpenDialog({
-        properties: ['openDirectory']
-      }).then(result => {
-        printToPDF(result.filePaths[0]);
-      }).catch(err => console.log('error', err));
-
-      /*// When the button is clicked, open the native file picker to select a PDF.
-      dialog.showOpenDialog({
-        properties: ['openFile'], // set to use openFileDialog
-        filters: [ { name: "PDFs", extensions: ['pdf'] } ] // limit the picker to just pdfs
-      }, (filepaths) => {
-
-        // Since we only allow one file, just use the first one
-        const filePath = filepaths[0];
-
-        const viewerEle = document.getElementById('viewer');
-        viewerEle.innerHTML = ''; // destroy the old instance of PDF.js (if it exists)
-
-        // Create an iframe that points to our PDF.js viewer, and tell PDF.js to open the file that was selected from the file picker.
-        const iframe = document.createElement('iframe');
-        iframe.src = path.resolve(__dirname, `../public/pdfjs/web/viewer.html?file=${filePath}`);
-
-        // Add the iframe to our UI.
-        viewerEle.appendChild(iframe);
-      });*/
+      document.getElementById('pdf-btn').addEventListener('click', e => {
+        //TODO: delete user.json
+        // Save PDF
+        dialog.showOpenDialog({
+          properties: ['openDirectory']
+        }).then(result => {
+          printToPDF(result.filePaths[0], user);
+        }).catch(err => console.log('error', err));
+      });
     });
   }
 });
