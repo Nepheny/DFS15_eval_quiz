@@ -8,14 +8,20 @@
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src='../public/WebViewer/lib/webviewer.min.js'></script>
     <title></title>
 </head>
 
 <body>
     <h1 class="main-title" id="main-title"></h1>
-    <main class="main-ctn">
-        END
-        <button id="pdf-btn" class="btn">Télécharger mon certificat</button>
+    <main class="main-ctn" id="pdf-ctn">
+        <section class="sidebar-ctn" id="section-ctn__question--end">
+            <img src="../assets/imgs/certificate.png" class="img" />
+            <h2 class="sidebar-ctn__title" id="section-ctn__apreciation"></h2>
+            <span class="sidebar-ctn__text" id="section-ctn__nbquestions"></span>
+            <span class="sidebar-ctn__text" id="section-ctn__score"></span>
+            <button id="pdf-btn" class="btn">Télécharger mon certificat</button>
+        </section>
     </main>
 </body>
 

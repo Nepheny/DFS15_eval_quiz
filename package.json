@@ -18,5 +18,13 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^7.1.2"
+  },
+  "build": {
+    "extraResources": [
+      "./public/**"
+    ]
+  },
+  "dependencies": {
+    "phantom-html-to-pdf": "^0.6.0"
   }
 }

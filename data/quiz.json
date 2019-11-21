@@ -2,112 +2,112 @@
     "title": "Quiz-Challenge",
     "questions": [
         {
-            "label": "A",
-            "img": "assets/imgs/home.png",
+            "label": "Quel est ce langage ?",
+            "img": "../assets/imgs/question-1.png",
             "choices": [
                 {
-                    "label": "A-1",
+                    "label": "Javascript",
                     "isCorrect": true
                 },
                 {
-                    "label": "A-2",
+                    "label": "PHP",
                     "isCorrect": false
                 },
                 {
-                    "label": "A-3",
-                    "isCorrect": true
+                    "label": "Python",
+                    "isCorrect": false
                 },
                 {
-                    "label": "A-4",
+                    "label": "Aucun des trois",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "label": "B",
+            "label": "Quel organisme mondial définit les bonnes pratiques du Web Mobile ?",
             "img": "",
             "choices": [
                 {
-                    "label": "B-1",
-                    "isCorrect": false
-                },
-                {
-                    "label": "B-2",
+                    "label": "W3C",
                     "isCorrect": true
                 },
                 {
-                    "label": "B-3",
+                    "label": "Open Mobile Alliance",
+                    "isCorrect": true
+                },
+                {
+                    "label": "MobileOK",
                     "isCorrect": false
                 },
                 {
-                    "label": "B-4",
+                    "label": "PlayMobile",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "label": "C",
+            "label": "Quelle est la valeur par défaut du Viewport d'un site sous Chrome (environnement Android) ?",
             "img": "",
             "choices": [
                 {
-                    "label": "C-1",
+                    "label": "780px",
                     "isCorrect": false
                 },
                 {
-                    "label": "C-2",
+                    "label": "800px",
                     "isCorrect": true
                 },
                 {
-                    "label": "C-3",
-                    "isCorrect": true
-                },
-                {
-                    "label": "C-4",
-                    "isCorrect": true
-                }
-            ]
-        },
-        {
-            "label": "D",
-            "img": "",
-            "choices": [
-                {
-                    "label": "D-1",
+                    "label": "850px",
                     "isCorrect": false
                 },
                 {
-                    "label": "D-2",
-                    "isCorrect": false
-                },
-                {
-                    "label": "D-3",
-                    "isCorrect": true
-                },
-                {
-                    "label": "D-4",
+                    "label": "980px",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "label": "E",
+            "label": "Quel langage peut être employé pour réaliser un site web mobile ?",
             "img": "",
             "choices": [
                 {
-                    "label": "E-1",
-                    "isCorrect": false
-                },
-                {
-                    "label": "E-2",
-                    "isCorrect": false
-                },
-                {
-                    "label": "E-3",
-                    "isCorrect": false
-                },
-                {
-                    "label": "E-4",
+                    "label": "HTML5",
                     "isCorrect": true
+                },
+                {
+                    "label": "XHTML 1.0",
+                    "isCorrect": true
+                },
+                {
+                    "label": "XHTML MP",
+                    "isCorrect": true
+                },
+                {
+                    "label": "WAP-HTML",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "label": "Quel est l'attribut HTML prévu pour gérer les images responsive ?",
+            "img": "",
+            "choices": [
+                {
+                    "label": "image-set",
+                    "isCorrect": false
+                },
+                {
+                    "label": "srcset",
+                    "isCorrect": true
+                },
+                {
+                    "label": "data-rwd",
+                    "isCorrect": false
+                },
+                {
+                    "label": "rwd-image",
+                    "isCorrect": false
                 }
             ]
         }
