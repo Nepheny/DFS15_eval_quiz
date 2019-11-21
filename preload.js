@@ -198,6 +198,7 @@ window.addEventListener('DOMContentLoaded', () => {
           properties: ['openDirectory']
         }).then(result => {
           printToPDF(result.filePaths[0], user);
+          fs.unlinkSync('data/user.json');
         }).catch(err => console.log('error', err));
       });
     });
