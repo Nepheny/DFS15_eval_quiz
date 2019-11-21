@@ -158,8 +158,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // Save currentResult
     document.getElementById('next-btn') && document.getElementById('next-btn').addEventListener('click', e => {
       document.querySelectorAll('input').forEach(el => {
-        el.checked && (score = score + (el.value ? 1 : -1));
-        el.value && (maxScore = maxScore + 1);
+        el.checked && (score = score + (el.value ? 1 : 0));
+        el.value === "true"  && (maxScore = maxScore + 1);
       });
       nbQuestions++;
       if (index + 1 < quiz.questions.length) {
