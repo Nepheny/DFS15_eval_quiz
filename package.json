@@ -4,7 +4,8 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron --disable-gpu ."
+    "start": "electron --disable-gpu .",
+    "build:linux": "electron-packager . iconGenerator --platform=linux --arch=x64 --out=dist/",
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,7 +18,8 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^7.1.2"
+    "electron": "^7.1.2",
+    "electron-packager": "^14.1.0"
   },
   "build": {
     "extraResources": [
