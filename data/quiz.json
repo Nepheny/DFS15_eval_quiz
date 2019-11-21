@@ -1,0 +1,115 @@
+{
+    "title": "Quiz-Challenge",
+    "questions": [
+        {
+            "label": "A",
+            "img": "assets/imgs/home.png",
+            "choices": [
+                {
+                    "label": "A-1",
+                    "isCorrect": true
+                },
+                {
+                    "label": "A-2",
+                    "isCorrect": false
+                },
+                {
+                    "label": "A-3",
+                    "isCorrect": true
+                },
+                {
+                    "label": "A-4",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "label": "B",
+            "img": "",
+            "choices": [
+                {
+                    "label": "B-1",
+                    "isCorrect": false
+                },
+                {
+                    "label": "B-2",
+                    "isCorrect": true
+                },
+                {
+                    "label": "B-3",
+                    "isCorrect": false
+                },
+                {
+                    "label": "B-4",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "label": "C",
+            "img": "",
+            "choices": [
+                {
+                    "label": "C-1",
+                    "isCorrect": false
+                },
+                {
+                    "label": "C-2",
+                    "isCorrect": true
+                },
+                {
+                    "label": "C-3",
+                    "isCorrect": true
+                },
+                {
+                    "label": "C-4",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "label": "D",
+            "img": "",
+            "choices": [
+                {
+                    "label": "D-1",
+                    "isCorrect": false
+                },
+                {
+                    "label": "D-2",
+                    "isCorrect": false
+                },
+                {
+                    "label": "D-3",
+                    "isCorrect": true
+                },
+                {
+                    "label": "D-4",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "label": "E",
+            "img": "",
+            "choices": [
+                {
+                    "label": "E-1",
+                    "isCorrect": false
+                },
+                {
+                    "label": "E-2",
+                    "isCorrect": false
+                },
+                {
+                    "label": "E-3",
+                    "isCorrect": false
+                },
+                {
+                    "label": "E-4",
+                    "isCorrect": true
+                }
+            ]
+        }
+    ]
+}

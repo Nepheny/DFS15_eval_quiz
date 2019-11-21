@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title></title>
+</head>
+
+<body>
+  <h1 class="main-title" id="main-title"></h1>
+  <main class="main-ctn">
+    <section class="section-ctn">
+      <img src="assets/imgs/home.png" class="img" />
+    </section>
+    <section class="sidebar-ctn">
+      <h2 class="sidebar-ctn__title">Veuillez remplir les champs</h2>
+      <ul class="sidebar-cton__list">
+        <li class="sidebar-ctn__list__item">
+          <label for="firstname" class="list__item__label">Prénom</label>
+          <input type="text" name="firstname" id="firstname" value="" class="list__item__input--text" />
+        </li>
+        <li class="sidebar-ctn__list__item">
+          <label for="lastname" class="list__item__label">Nom</label>
+          <input type="text" name="lastname" id="lastname" value="" class="list__item__input--text" />
+        </li>
+        <li class="sidebar-ctn__list__item">
+          <label for="email" class="list__item__label">Mail</label>
+          <input type="email" name="email" id="email" value="" class="list__item__input--text" />
+        </li>
+      </ul>
+      <button id="launch-btn" class="btn">Démarrer</button>
+    </section>
+  </main>
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
+</body>
+
+</html>
